@@ -6,6 +6,36 @@
 
 body {
   background: black;
+  padding: 0 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  position: relative;
+}
+
+.container i {
+  top: 50%;
+  position: absolute;
+  color: white;
+  width: 46px;
+  height: 46px;
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  transform: translateY(-50%);
+}
+
+.container i:first-child {
+  left: -36px;
+}
+
+.container i:last-child {
+  right: -36px;
 }
 
 .title-name {
@@ -13,6 +43,30 @@ body {
 }
 
 .photos {
-  width: 320px;
+  width: calc(100% / 3);
   height: 480px;
+  margin-left: 15px;
+}
+
+.photos:first-child {
+  margin-left: 0px;
+}
+
+.slides {
+  white-space: nowrap;
+  font-size: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+  .photos {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .photos {
+    width: 100%;
+  }
 }
