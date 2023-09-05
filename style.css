@@ -11,3 +11,8 @@ body {
 .title-name {
   color: white;
 }
+
+.photos {
+  width: 320px;
+  height: 480px;
+}
