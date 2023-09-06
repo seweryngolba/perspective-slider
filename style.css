@@ -85,10 +85,28 @@ body {
   .photos {
     width: calc(100% / 2);
   }
+  .container::before {
+    width: 900px;
+    height: 100px;
+  }
+
+  .container::after {
+    width: 900px;
+    height: 100px;
+  }
 }
 
 @media screen and (max-width: 550px) {
   .photos {
     width: 100%;
+  }
+  .container::before {
+    width: 450px;
+    height: 100px;
+  }
+
+  .container::after {
+    width: 450px;
+    height: 100px;
   }
 }
