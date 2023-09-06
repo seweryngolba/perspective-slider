@@ -54,6 +54,7 @@ body {
 
 .container i:first-child {
   left: -36px;
+  display: none;
 }
 
 .container i:last-child {
@@ -72,6 +73,15 @@ body {
 
 .photos:first-child {
   margin-left: 0px;
+}
+
+.slides.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.slides.dragging img {
+  pointer-events: none;
 }
 
 .slides {
