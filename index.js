@@ -1,13 +1,16 @@
 const carousel = document.querySelector(".slides");
 arrowIcons = document.querySelectorAll(".container i");
+firstImg = carousel.querySelectorAll("img")[0];
 
 let isDragStart = false,
   prevPageX,
   prevScrollLeft;
 
+let firstImgWidth = firstImg.clientWidth + 14;
+
 arrowIcons.forEach((icon) => {
   icon.addEventListener("click", () => {
-    console.log(icon);
+    carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
   });
 });
 
@@ -20,6 +23,7 @@ const dragStart = (e) => {
 const dragging = (e) => {
   if (!isDragStart) return;
   e.preventDefault();
+  carousel.classList.add("dragging");
   let positionDiff = e.pageX - prevPageX;
   carousel.scrollLeft = prevScrollLeft - positionDiff;
 };
