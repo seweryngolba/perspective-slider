@@ -1,6 +1,6 @@
 const galleryContainer = document.querySelector(".gallery-container");
-const galleryControlsContainer = document.querySelector("gallery-controls");
-const galleryControls = [previous, next];
+const galleryControlsContainer = document.querySelector(".gallery-controls");
+const galleryControls = ["gallery-control-previous", "gallery-control-next"];
 const galleryItems = document.querySelectorAll(".gallery-item");
 
 class Carousel {
@@ -25,30 +25,20 @@ class Carousel {
   }
 
   setCurrentState(direction) {
-    if (direction.className == "gallery-controls-previous") {
+    if (direction === "gallery-control-previous") {
       this.carouselArray.unshift(this.carouselArray.pop());
-    } else {
+    } else if (direction === "gallery-control-next") {
       this.carouselArray.push(this.carouselArray.shift());
     }
     this.updateGallery();
   }
 
-  setControls() {
-    this.carouselControls.forEach((control) => {
-      galleryControlsContainer.appendChild(
-        document.createElement("button")
-      ).className = `gallery-controls-${control}`;
-      document.querySelector(`.gallery-controls-${control}`).innerText =
-        control;
-    });
-  }
-
   useControls() {
-    const triggers = [...galleryControlsContainer.childNodes];
+    const triggers = document.querySelectorAll(".gallery-controls button");
     triggers.forEach((control) => {
       control.addEventListener("click", (e) => {
         e.preventDefault();
-        this.setCurrentState(control);
+        this.setCurrentState(control.className);
       });
     });
   }
@@ -60,5 +50,4 @@ const exampleCarousel = new Carousel(
   galleryControls
 );
 
-exampleCarousel.setControls();
 exampleCarousel.useControls();
