@@ -5,8 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>simple slider</title>
     <link rel="stylesheet" href="03-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
   </head>
   <body>
+    <div class="container">
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="/images/ph1.jpeg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/ph2.jpeg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/ph3.jpeg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/ph4.jpeg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/images/ph5.jpeg" />
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="03-index.js"></script>
   </body>
 </html>
