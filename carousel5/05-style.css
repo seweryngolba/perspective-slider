@@ -12,6 +12,7 @@ body {
   width: 900px;
   display: flex;
   overflow-x: scroll;
+  scroll-behavior: smooth;
 }
 
 .gallery div {
